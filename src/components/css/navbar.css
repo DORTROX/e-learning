@@ -1,0 +1,70 @@
+.navbar {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(27, 26, 26);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+}
+
+.navbar h1 {
+    padding: 0 2%;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px 0;
+    padding: 0 2%;
+    align-items: center;
+    list-style-type: none;
+}
+
+.navbar ul li {
+    margin: 0 2vw;
+}
+
+.navbar ul li p {
+    color: wheat;
+}
+
+.navbar .profile {
+    display: flex;
+    position: relative;
+    align-items: center;
+    position: relative;
+}
+
+.navbar .profile:hover p {
+    animation: profileName 1s;
+    position: unset;
+    animation-fill-mode: forwards;
+
+}
+
+.navbar .profile p {
+    position: absolute;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.navbar .profile img {
+    z-index: 1;
+    width: 3em;
+    margin: .5vh 0 .5vh 2vw;
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 20px black);
+}
+
+
+@keyframes profileName {
+    from {
+        opacity: 0;
+        transform: translateX(50%); 
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0%);   
+    }
+}

@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Navbar from './components/navbar';
+import Tools from './WebPages/Tools';
+import Home from './WebPages/Home';
 
 function App() {
+  const [page, setpage] = useState();
+  function Pager(val){
+    setpage(val)
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar PagingFunc={Pager}/>
+      {(()=>{
+        if (page === "Tools") {
+          return <Tools/>
+        } else {
+          return <Home/>
+        }
+      })()}
     </div>
   );
 }
